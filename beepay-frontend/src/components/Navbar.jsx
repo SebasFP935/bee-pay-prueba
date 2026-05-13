@@ -1,5 +1,34 @@
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Zap, List, CalendarPlus, Calendar } from 'lucide-react'
+import { List, CalendarPlus, Calendar } from 'lucide-react'
+
+function BeePayLogo({ size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      {/* Body */}
+      <ellipse cx="50" cy="58" rx="22" ry="28" fill="#F5A800" />
+      {/* Stripes */}
+      <rect x="28" y="52" width="44" height="8" rx="2" fill="#2a2a2a" />
+      <rect x="30" y="64" width="40" height="8" rx="2" fill="#2a2a2a" />
+      {/* Head */}
+      <ellipse cx="50" cy="30" rx="16" ry="14" fill="#2a2a2a" />
+      {/* Antennae */}
+      <line x1="43" y1="18" x2="36" y2="8" stroke="#2a2a2a" strokeWidth="3" strokeLinecap="round"/>
+      <circle cx="35" cy="7" r="3" fill="#F5A800" />
+      <line x1="57" y1="18" x2="64" y2="8" stroke="#2a2a2a" strokeWidth="3" strokeLinecap="round"/>
+      <circle cx="65" cy="7" r="3" fill="#F5A800" />
+      {/* Eyes */}
+      <circle cx="43" cy="30" r="4" fill="white" />
+      <circle cx="57" cy="30" r="4" fill="white" />
+      <circle cx="44" cy="31" r="2" fill="#111" />
+      <circle cx="58" cy="31" r="2" fill="#111" />
+      {/* Wings */}
+      <ellipse cx="22" cy="42" rx="16" ry="9" fill="rgba(200,241,53,0.85)" transform="rotate(-20 22 42)" />
+      <ellipse cx="78" cy="42" rx="16" ry="9" fill="rgba(200,241,53,0.85)" transform="rotate(20 78 42)" />
+      {/* Stinger */}
+      <polygon points="50,84 45,94 55,94" fill="#2a2a2a" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   const navigate = useNavigate()
@@ -24,14 +53,7 @@ export default function Navbar() {
           onClick={() => navigate('/')}
           style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
         >
-          <div style={{
-            width: 32, height: 32,
-            background: 'var(--accent)',
-            borderRadius: '8px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            <Zap size={18} color="#0a0a0a" fill="#0a0a0a" />
-          </div>
+          <BeePayLogo size={38} />
           <span style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 800,
